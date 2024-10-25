@@ -15,10 +15,12 @@ export class Dropdown {
     });
   }
 
-  handleClicks(dropdownActionELement) {
+  handleClicks(dropdownActionElement) {
     this.dropdowns.forEach((dropdown) => {
-      if (dropdown.parentElement.contains(dropdownActionELement)) {
+      if (dropdown.parentElement.contains(dropdownActionElement)) {
         dropdown.classList.add("active");
+      } else {
+        dropdown.classList.remove("active");
       }
     });
   }
