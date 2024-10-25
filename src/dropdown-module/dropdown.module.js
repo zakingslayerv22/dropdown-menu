@@ -9,7 +9,17 @@ export class Dropdown {
 
   initialize() {
     document.addEventListener("click", (e) => {
-      console.log(e.target);
+      if (e.target.classList.contains("dropdown-action")) {
+        this.handleClicks(e.target);
+      }
+    });
+  }
+
+  handleClicks(dropdownActionELement) {
+    this.dropdowns.forEach((dropdown) => {
+      if (dropdown.parentElement.contains(dropdownActionELement)) {
+        dropdown.classList.add("active");
+      }
     });
   }
 }
