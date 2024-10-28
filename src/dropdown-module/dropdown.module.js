@@ -11,6 +11,8 @@ export class Dropdown {
     document.addEventListener("click", (e) => {
       if (e.target.classList.contains("dropdown-action")) {
         this.handleClicks(e.target);
+      } else {
+        this.hideDropdownOnClickOutside(e.target);
       }
     });
   }
@@ -20,6 +22,14 @@ export class Dropdown {
       if (dropdown.parentElement.contains(dropdownActionElement)) {
         dropdown.classList.add("active");
       } else {
+        dropdown.classList.remove("active");
+      }
+    });
+  }
+
+  hideDropdownOnClickOutside(element) {
+    this.dropdowns.forEach((dropdown) => {
+      if (!dropdown.parentElement.contains(element)) {
         dropdown.classList.remove("active");
       }
     });
