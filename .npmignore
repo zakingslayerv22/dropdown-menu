@@ -1,0 +1,12 @@
+dist
+node_modules
+src/index.html
+src/index.css
+.eslintrc
+.gitignore
+.prettierignore
+.prettierrc
+.eslint.config.mjs
+webpack.common.js
+webpack.dev.js
+webpack.prod.js
